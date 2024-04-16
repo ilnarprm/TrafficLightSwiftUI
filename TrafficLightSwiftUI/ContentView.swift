@@ -14,9 +14,6 @@ struct ContentView: View {
     @State var opacityGreen = 0.5
     @State var currentLight = CurrentLight.red
     
-    private let lightingIsOn = 1
-    private let lightingIsOff = 0.5
-    
     var body: some View {
         ZStack(alignment: .top) {
             Color.black
