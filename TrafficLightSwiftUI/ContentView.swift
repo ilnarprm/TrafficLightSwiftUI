@@ -27,21 +27,7 @@ struct ContentView: View {
                 Spacer()
                 Button {
                     textButton = "NEXT"
-                    switch currentLight {
-                        case .red:
-                            opacityGreen = 0.5
-                            opacityRed = 1
-                            currentLight = .yelow
-                        case .yelow: 
-                            opacityRed = 0.5
-                            opacityYelow = 1
-                            currentLight = .green
-                        case .green:
-                            opacityYelow = 0.5
-                            opacityGreen = 1
-                            currentLight = .red
-                    }
-                    
+                    switchLight()
                 } label: {
                     Text(textButton)
                         .font(.title)
@@ -50,8 +36,27 @@ struct ContentView: View {
             .padding()
         }
     }
+    
     enum CurrentLight {
         case red, yelow, green
+    }
+    
+    func switchLight() {
+        switch currentLight {
+            case .red:
+                opacityGreen = 0.5
+                opacityRed = 1
+                currentLight = .yelow
+            case .yelow:
+                opacityRed = 0.5
+                opacityYelow = 1
+                currentLight = .green
+            case .green:
+                opacityYelow = 0.5
+                opacityGreen = 1
+                currentLight = .red
+        }
+        
     }
 }
 
